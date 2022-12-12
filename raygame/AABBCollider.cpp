@@ -52,10 +52,12 @@ bool AABBCollider::checkCollisionAABB(AABBCollider* collider)
 		return false;
 
 	//Check for AABB overlap
-	if (collider->getLeft() <= getRight() &&
+	if (
+		collider->getLeft() <= getRight() &&
 		collider->getTop() <= getBottom() &&
 		getLeft() <= collider->getRight() &&
-		getTop() <= collider->getBottom())
+		getTop() <= collider->getBottom()
+		)
 		return true;
 
 	return false;

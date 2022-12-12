@@ -1,23 +1,25 @@
 #pragma once
+#include "Component.h"
 
 class Texture2D;
+class Transform2D;
 
-class Sprite
+class SpriteComponent : public Component
 {
 public:
-    Sprite() {}
-    ~Sprite();
+    SpriteComponent() {}
+    ~SpriteComponent();
     /// <summary>
     /// Loads the given texture
     /// </summary>
     /// <param name="texture">Sets the sprites image to be the given texture</param>
-    Sprite(Texture2D* texture);
+    SpriteComponent(Actor* owner, Texture2D* texture);
 
     /// <summary>
     /// Loads the texture at the given path
     /// </summary>
     /// <param name="path">The file path of the texture</param>
-    Sprite(const char* path);
+    SpriteComponent(Actor* owner, const char* path);
 
     /// <summary>
     /// Returns the width of the Sprite
@@ -53,7 +55,7 @@ public:
     /// of the given transform
     /// </summary>
     /// <param name="transform"></param>
-    void draw(MathLibrary::Matrix3 transform);
+    void draw() override;
 
 private:
     Texture2D* m_texture;
