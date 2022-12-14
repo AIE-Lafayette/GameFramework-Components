@@ -4,7 +4,7 @@
 
 void SampleScene::start()
 {
-	//This is a cool comment
+	//This is a better comment
 	Actor* test = new Actor(50, 50, "Test");
 	test->addComponent(new SpriteComponent(test, "Images/player.png"));
 	test->getTransform()->setScale({ 50, 50 });
